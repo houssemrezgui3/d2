@@ -26,7 +26,7 @@ export default function Footer() {
             <ul className="footer-contact-list">
               <li className="footer-contact-item">
                 <span className="footer-contact-icon">&#9679;</span>
-                23 Av. Iben Kholdoun, 1064 Tunis, Tunisie
+                23 Av. Iben Kholdoun, Tunis 1064, Tunisie
               </li>
               <li className="footer-contact-item">
                 <span className="footer-contact-icon">&#9679;</span>

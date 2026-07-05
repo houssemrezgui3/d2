@@ -55,7 +55,7 @@ This guide helps you verify all SEO-critical elements are correct before deployi
 **JSON-LD Schema**
 - [ ] layout.tsx lines 47-78: Schema.org Dentist markup is present
 - [ ] Schema name matches: "Cabinet dentaire Dr rezgui Houssem"
-- [ ] Schema address is correct: "23 Av. Iben Kholdoun, 1064 Tunis, Tunisie"
+- [ ] Schema address is correct: "23 Av. Iben Kholdoun, Tunis 1064, Tunisie"
 - [ ] Schema phone is correct: "+21650149159"
 - [ ] Schema coordinates are correct: lat 36.83983244399368 / lng 10.115723750320473
 
