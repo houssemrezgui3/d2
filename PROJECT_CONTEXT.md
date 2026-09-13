@@ -53,8 +53,14 @@
 - **2026-09-14**: Created `remove_postal_code_checklist.md` to remove postal code `1064` from `components/Footer.tsx` and Schema.org `PostalAddress` in `app/layout.tsx`.
 - **2026-09-14**: Executed Section 1 of `remove_postal_code_checklist.md`: Removed postal code `1064` from `components/Footer.tsx` address line (`23 Av. Iben Kholdoun, Tunis, Tunisie`).
 - **2026-09-14**: Executed Section 2 of `remove_postal_code_checklist.md`: Removed `postalCode: '1064'` field from `jsonLd.address` Schema.org object in `app/layout.tsx`.
+- **2026-09-14**: Created `dynamic_sitemap_checklist.md` outlining replacement of static `public/sitemap.xml` with dynamic Next.js App Router generator (`app/sitemap.ts`) backed by Supabase.
+- **2026-09-14**: Executed Section 1 of `dynamic_sitemap_checklist.md`: Removed static `public/sitemap.xml` file.
+- **2026-09-14**: Executed Section 2 of `dynamic_sitemap_checklist.md`: Created dynamic `app/sitemap.ts` Next.js route fetching static pages, services, and sub-services from Supabase with ISR revalidation.
+- **2026-09-14**: Executed Section 3 of `dynamic_sitemap_checklist.md`: Verified `public/robots.txt` contains `Sitemap: https://www.smilevip.net/sitemap.xml`.
+- **2026-09-14**: Fixed `app/sitemap.ts` Supabase queries by selecting `created_at` instead of non-existent `updated_at` column.
 
 ## Open Items
+- Execute Section 4 of `dynamic_sitemap_checklist.md` (Verification & build test).
 - Execute Section 3 of `remove_postal_code_checklist.md` (Verification & build test).
 - Proceed with Section 3 of `typescript_schema_fix_checklist.md` (Verification & build test).
 - Complete Section 4 of `medical_procedure_schema_checklist.md` (Verification & build test).
