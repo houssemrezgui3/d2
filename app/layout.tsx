@@ -54,12 +54,15 @@ const jsonLd = {
   ],
   '@id': 'https://smilevip.net/#dentist',
   url: 'https://smilevip.net',
+  sameAs: [
+    'https://www.instagram.com/cabinet_dr.rezgui_houssem',
+    'https://linkedin.com/company/cabinet-dentaire-dr-rezgui-houssem',
+  ],
   telephone: '+21650149159',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '23 Av. Iben Kholdoun',
     addressLocality: 'Tunis',
-    postalCode: '1064',
     addressCountry: 'TN',
   },
   geo: {

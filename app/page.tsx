@@ -10,8 +10,8 @@ export default function HomePage() {
       <HeroSection />
       <SeoBlock />
       <ReviewsSection />
-      <LocationSection />
       <ConsultSection />
+      <LocationSection />
     </main>
   );
 }

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function SeoBlock() {
   return (
     <section id="seo-block" className="seo-block section-padding">
@@ -22,7 +24,7 @@ export default function SeoBlock() {
             <p className="seo-card-desc">
               Implants, blanchiment, orthodontie, facettes, couronnes et plus encore : découvrez tous nos traitements.
             </p>
-            <a href="#services" className="seo-card-link">Voir tous les services &rarr;</a>
+            <Link href="/services" className="seo-card-link">Voir tous les services &rarr;</Link>
           </article>
 
           <article id="areas" className="seo-card">

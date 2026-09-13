@@ -617,6 +617,21 @@ button {
     color: var(--accent-color);
 }
 
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-social-icon {
+    color: var(--accent-color);
+    transition: transform var(--transition-speed) ease;
+}
+
+.footer-social-link:hover .footer-social-icon {
+    transform: scale(1.15);
+}
+
 /* Contact Column */
 .footer-contact-list {
     list-style: none;
@@ -1352,6 +1367,7 @@ button {
     white-space: pre-line;
     display: -webkit-box;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin: 0 0 0.5rem;
@@ -1359,6 +1375,7 @@ button {
 
 .review-text.expanded {
     -webkit-line-clamp: unset;
+    line-clamp: unset;
 }
 
 .review-toggle {
@@ -1473,5 +1490,286 @@ button {
     }
     100% {
         opacity: 0.4;
+    }
+}
+
+/* ==========================================
+   Services Grid & Service Card Redesign
+   ========================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.service-card {
+    position: relative;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(42, 51, 44, 0.08);
+    border-radius: 8px !important; /* scoped card radius */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(42, 51, 44, 0.06);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed) ease;
+    z-index: 2;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(42, 51, 44, 0.12);
+}
+
+.service-card:hover::before {
+    width: 4px;
+}
+
+.service-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.service-card-body {
+    padding: 2rem 2rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .service-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+}
+
+.service-card .service-card-desc {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    flex: 1;
+}
+
+.service-card-cta {
+    font-family: var(--font-sans);
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-top: 1px solid rgba(42, 51, 44, 0.08);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+.service-card-cta .cta-arrow {
+    display: inline-block;
+    transition: transform var(--transition-speed) ease;
+}
+
+.service-card:hover .service-card-cta .cta-arrow {
+    transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   Luxury Article Typography & Internal Link Styling
+   ========================================== */
+
+.prose {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(195, 164, 105, 0.2);
+    box-shadow: var(--card-shadow);
+    padding: 3rem 2.5rem;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.prose p {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.prose p:last-child {
+    margin-bottom: 0;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+    font-family: var(--font-serif);
+    color: var(--text-dark);
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.prose h1 {
+    font-size: 2.2rem;
+}
+
+.prose h2 {
+    font-size: 1.75rem;
+}
+
+.prose h3 {
+    font-size: 1.4rem;
+}
+
+.prose ul,
+.prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.75rem;
+    line-height: 1.8;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.prose strong {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.seo-internal-link,
+.prose a {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgba(195, 164, 105, 0.4);
+    text-underline-offset: 3px;
+    transition: color var(--transition-speed) ease, text-decoration-color var(--transition-speed) ease;
+}
+
+.seo-internal-link:hover,
+.prose a:hover {
+    color: var(--accent-color);
+    text-decoration-color: var(--accent-color);
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .prose {
+        padding: 2rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .prose p {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================
+   WhatsApp CTA (Luxury Redesign)
+   ========================================== */
+
+.whatsapp-cta-card {
+    background: linear-gradient(180deg, #FAF9F5 0%, #FDFBF7 100%) !important;
+    border: 1px solid rgba(195, 164, 105, 0.25);
+    box-shadow: 0 10px 40px rgba(42, 51, 44, 0.09);
+    border-radius: 16px !important;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.whatsapp-cta-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50% !important;
+    background: rgba(37, 211, 102, 0.10);
+    color: #25D366;
+    margin-bottom: 1.25rem;
+}
+
+.whatsapp-cta-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+}
+
+.whatsapp-cta-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto 1.75rem;
+}
+
+.whatsapp-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: #25D366;
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-cta-btn:hover {
+    background: #1ebc5b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    color: #FFFFFF !important;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-cta-card {
+        padding: 2rem 1.25rem;
+    }
+    
+    .whatsapp-cta-title {
+        font-size: 1.35rem;
     }
 }

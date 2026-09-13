@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Header() {
   const [expanded, setExpanded] = useState(false);
@@ -16,9 +17,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="nav-container">
-        <a href="#" className="logo" onClick={close}>
+        <Link href="/" className="logo" onClick={close}>
           <img src="/logo.webp" alt="Cabinet dentaire Dr rezgui Houssem Logo" className="logo-img" />
-        </a>
+        </Link>
         <button
           className="mobile-toggle"
           aria-label="Toggle navigation"
@@ -30,11 +31,11 @@ export default function Header() {
         </button>
         <nav className={`nav-menu${expanded ? ' active' : ''}`}>
           <ul className="nav-list">
-            <li><a href="#hero" className="nav-link" onClick={close}>Accueil</a></li>
-            <li><a href="#services" className="nav-link" onClick={close}>Services</a></li>
-            <li><a href="#areas" className="nav-link" onClick={close}>Implantations</a></li>
+            <li><Link href="/" className="nav-link" onClick={close}>Accueil</Link></li>
+            <li><Link href="/services" className="nav-link" onClick={close}>Services</Link></li>
+            <li><Link href="/#areas" className="nav-link" onClick={close}>Implantations</Link></li>
           </ul>
-          <a href="#consultation" className="btn btn-outline nav-btn" onClick={close}>Prendre RDV</a>
+          <Link href="/#consultation" className="btn btn-outline nav-btn" onClick={close}>Prendre RDV</Link>
           <a href="tel:+21650149159" className="btn btn-outline nav-btn" onClick={close}>Appeler : +216 50 149 159</a>
         </nav>
       </div>
