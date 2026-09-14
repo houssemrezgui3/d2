@@ -58,8 +58,21 @@
 - **2026-09-14**: Executed Section 2 of `dynamic_sitemap_checklist.md`: Created dynamic `app/sitemap.ts` Next.js route fetching static pages, services, and sub-services from Supabase with ISR revalidation.
 - **2026-09-14**: Executed Section 3 of `dynamic_sitemap_checklist.md`: Verified `public/robots.txt` contains `Sitemap: https://www.smilevip.net/sitemap.xml`.
 - **2026-09-14**: Fixed `app/sitemap.ts` Supabase queries by selecting `created_at` instead of non-existent `updated_at` column.
+- **2026-09-14**: Created `sub_services_404_fix_checklist.md` and implementation plan to diagnose and resolve 404 errors on sub-services pages when updating content in Supabase.
+- **2026-09-14**: Executed Section 1 of `sub_services_404_fix_checklist.md`: Performed SQL audit on `sub_services` and `services` tables. Verified 0 orphan `service_id` references, 100% clean URL slug formats, and active public RLS read policies (`Allow public read access`).
+- **2026-09-14**: Executed Section 2 of `sub_services_404_fix_checklist.md`: Updated `app/services/[slug]/[subSlug]/page.tsx` with `decodeURIComponent` parameter resolution, replaced `.single()` with `.maybeSingle()`, and updated canonical URL domain to `smilevip.net`.
+- **2026-09-14**: Executed Section 1 of `center_headings_checklist.md`: Added `textAlign: 'center'` to the inline `style` of the H2 "Sous-services & Prestations Spécialisées" in `app/services/[slug]/page.tsx`.
+- **2026-09-14**: Executed Section 2 of `center_headings_checklist.md`: Added `text-align: center` to `.service-card .service-card-title` in `app/globals.css`.
+- **2026-09-14**: Executed Section 3 & 4 of `sub_services_404_fix_checklist.md`: Removed hardcoded `isClickable` check restricting sub-service links to `implants-dentaires` in `app/services/[slug]/page.tsx` so all sub-services have clickable CTA links. Verified Next.js build compilation (`npm run build` succeeded with code 0, generating all 56 static pages cleanly).
+- **2026-09-14**: Created `center_h2_h3_headings_checklist.md` to center `h2` and `h3` prose headings in the middle (`text-align: center`).
+- **2026-09-14**: Executed Section 1 of `center_h2_h3_headings_checklist.md`: Added `text-align: center;` to `.prose h2` and `.prose h3` in `app/globals.css`.
+- **2026-09-14**: Executed Section 2 of `center_h2_h3_headings_checklist.md`: Verified `app/services/[slug]/page.tsx`, `app/services/[slug]/[subSlug]/page.tsx`, and `lib/markdown.ts` HTML rendering for centered `h2` and `h3` heading compatibility.
 
 ## Open Items
+- Complete remaining section (Section 3) of `center_h2_h3_headings_checklist.md` (Verification & build test) when requested.
+- Deploy updated codebase to live server / hosting provider so live site benefits from dynamic URL decoding, `.maybeSingle()` queries, and sub-service links.
+- Execute Section 4 of `dynamic_sitemap_checklist.md` (Verification & build test).
+- Execute Section 3 of `remove_postal_code_checklist.md` (Verification & build test).
 - Execute Section 4 of `dynamic_sitemap_checklist.md` (Verification & build test).
 - Execute Section 3 of `remove_postal_code_checklist.md` (Verification & build test).
 - Proceed with Section 3 of `typescript_schema_fix_checklist.md` (Verification & build test).

@@ -1561,6 +1561,7 @@ button {
     color: var(--text-dark);
     margin-bottom: 0.75rem;
     font-weight: 400;
+    text-align: center;
 }
 
 .service-card .service-card-desc {
@@ -1650,10 +1651,12 @@ button {
 
 .prose h2 {
     font-size: 1.75rem;
+    text-align: center;
 }
 
 .prose h3 {
     font-size: 1.4rem;
+    text-align: center;
 }
 
 .prose ul,

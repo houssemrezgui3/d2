@@ -21,18 +21,20 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const resolvedParams = await params;
+  const slug = decodeURIComponent(resolvedParams.slug);
+
   const { data: page } = await supabase
     .from('services')
     .select('title, description, seo_title, seo_description, slug')
     .eq('slug', slug)
-    .single();
+    .maybeSingle();
 
   if (!page) return {};
 
   const title = page.seo_title || page.title;
   const description = page.seo_description || page.description;
-  const canonicalUrl = `https://yourdomain.com/services/${page.slug}`;
+  const canonicalUrl = `https://smilevip.net/services/${page.slug}`;
 
   return {
     title,
@@ -57,13 +59,14 @@ interface SubService {
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
-  const { slug } = await params;
+  const resolvedParams = await params;
+  const slug = decodeURIComponent(resolvedParams.slug);
 
   const { data: service } = await supabase
     .from('services')
     .select('*, sub_services(*)')
     .eq('slug', slug)
-    .single();
+    .maybeSingle();
 
   if (!service) {
     notFound();
@@ -130,7 +133,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
         {subServices.length > 0 && (
           <section className="mb-16">
-            <h2 className="text-2xl font-normal mb-8" style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-dark)' }}>
+            <h2 className="text-2xl font-normal mb-8" style={{ fontFamily: 'var(--font-serif)', color: 'var(--text-dark)', textAlign: 'center' }}>
               Sous-services & Prestations Spécialisées
             </h2>
             <div className="services-grid">

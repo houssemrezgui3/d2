@@ -38,13 +38,15 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: SubServicePageProps): Promise<Metadata> {
-  const { slug, subSlug } = await params;
+  const resolvedParams = await params;
+  const slug = decodeURIComponent(resolvedParams.slug);
+  const subSlug = decodeURIComponent(resolvedParams.subSlug);
 
   const { data: service } = await supabase
     .from('services')
     .select('id')
     .eq('slug', slug)
-    .single();
+    .maybeSingle();
 
   if (!service) return {};
 
@@ -53,13 +55,13 @@ export async function generateMetadata({ params }: SubServicePageProps): Promise
     .select('title, description, seo_title, seo_description, slug')
     .eq('service_id', service.id)
     .eq('slug', subSlug)
-    .single();
+    .maybeSingle();
 
   if (!subService) return {};
 
   const title = subService.seo_title || subService.title;
   const description = subService.seo_description || subService.description;
-  const canonicalUrl = `https://yourdomain.com/services/${slug}/${subService.slug}`;
+  const canonicalUrl = `https://smilevip.net/services/${slug}/${subService.slug}`;
 
   return {
     title,
@@ -77,13 +79,15 @@ export async function generateMetadata({ params }: SubServicePageProps): Promise
 }
 
 export default async function SubServicePage({ params }: SubServicePageProps) {
-  const { slug, subSlug } = await params;
+  const resolvedParams = await params;
+  const slug = decodeURIComponent(resolvedParams.slug);
+  const subSlug = decodeURIComponent(resolvedParams.subSlug);
 
   const { data: service } = await supabase
     .from('services')
     .select('id, title, slug')
     .eq('slug', slug)
-    .single();
+    .maybeSingle();
 
   if (!service) {
     notFound();
@@ -94,7 +98,7 @@ export default async function SubServicePage({ params }: SubServicePageProps) {
     .select('*')
     .eq('service_id', service.id)
     .eq('slug', subSlug)
-    .single();
+    .maybeSingle();
 
   if (!subService) {
     notFound();
