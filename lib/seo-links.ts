@@ -68,15 +68,21 @@ export function applyInternalLinks(
     }
 
     const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`(?<!<[^>]*)\\b(${escapedKeyword})\\b(?![^<]*?>)`, 'gi');
+    const regex = new RegExp(`(?<![a-zA-Z0-9\\u00C0-\\u024F-])(${escapedKeyword})(?![a-zA-Z0-9\\u00C0-\\u024F-])`, 'gi');
 
     let replaced = false;
 
     processedHtml = processedHtml.replace(regex, (match, _p1, offset, fullString) => {
       if (replaced) return match;
 
-      // Ensure match is not nested inside an existing <a>...</a> anchor tag
       const precedingText = fullString.substring(0, offset);
+
+      // Ensure match is not inside an HTML tag definition (e.g. <a href="..." title="...">)
+      if (precedingText.lastIndexOf('<') > precedingText.lastIndexOf('>')) {
+        return match;
+      }
+
+      // Ensure match is not nested inside an existing <a>...</a> anchor tag
       const openAnchorCount = (precedingText.match(/<a\b[^>]*>/gi) || []).length;
       const closeAnchorCount = (precedingText.match(/<\/a>/gi) || []).length;
 
