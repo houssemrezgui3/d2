@@ -67,7 +67,7 @@
 - **2026-09-14**: Created `center_h2_h3_headings_checklist.md` to center `h2` and `h3` prose headings in the middle (`text-align: center`).
 - **2026-09-14**: Executed Section 1 of `center_h2_h3_headings_checklist.md`: Added `text-align: center;` to `.prose h2` and `.prose h3` in `app/globals.css`.
 - **2026-09-14**: Executed Section 2 of `center_h2_h3_headings_checklist.md`: Verified `app/services/[slug]/page.tsx`, `app/services/[slug]/[subSlug]/page.tsx`, and `lib/markdown.ts` HTML rendering for centered `h2` and `h3` heading compatibility.
-- **2026-09-15**: Executed Section 1 of `supabase_keyword_regex_fix_checklist.md`: Refactored `applyInternalLinks` in `lib/seo-links.ts` to replace rigid `\b` word boundaries with Unicode and hyphen-aware regex boundaries (`(?<![a-zA-Z0-9\u00C0-\u024F-])` ... `(?![a-zA-Z0-9\u00C0-\u024F-])`) and HTML attribute tag inspection.
+- **2026-09-15**: Executed Section 1 of `supabase_keyword_regex_fix_checklist.md`: Refactored `applyInternalLinks` in `lib/seo-links.ts` to replace rigid `\b` word boundaries with Unicode and hyphen-aware regex boundaries (`(?<![a-zA-Z0-9\u00C0-\u024F-])` ... `(?![a-zA-Z0-9\u00C0-\u024F-])`), HTML attribute tag inspection, and flexible `\\s+` whitespace matching for double spaces/newlines in article text.
 
 ## Open Items
 - Execute Section 2 of `supabase_keyword_regex_fix_checklist.md` (Verification & build test).

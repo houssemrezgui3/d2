@@ -67,7 +67,7 @@ export function applyInternalLinks(
       return;
     }
 
-    const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const escapedKeyword = keyword.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
     const regex = new RegExp(`(?<![a-zA-Z0-9\\u00C0-\\u024F-])(${escapedKeyword})(?![a-zA-Z0-9\\u00C0-\\u024F-])`, 'gi');
 
     let replaced = false;
