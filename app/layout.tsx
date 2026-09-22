@@ -5,6 +5,7 @@ import WhatsAppFab from '@/components/WhatsAppFab';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.smilevip.net'),
   title: 'Le Meilleur Dentiste Tunis - si vous cherchez des Implants Dentaires près de chez vous - Cabinet dentaire Dr rezgui Houssem est l\'endroit qu\'il vous faut',
   description: 'Vous méritez un dentiste de confiance à Tunis. Chez le Cabinet dentaire Dr rezgui Houssem, vous êtes entre les mains d\'un professionnel qualifié. Prenez rendez-vous dès aujourd\'hui !',
   alternates: {

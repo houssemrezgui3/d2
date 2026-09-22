@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: SubServicePageProps): Promise
 
   const title = subService.seo_title || subService.title;
   const description = subService.seo_description || subService.description;
-  const canonicalUrl = `https://smilevip.net/services/${slug}/${subService.slug}`;
+  const canonicalUrl = `https://www.smilevip.net/services/${slug}/${subService.slug}`;
 
   return {
     title,
