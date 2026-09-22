@@ -69,11 +69,12 @@
 - **2026-09-14**: Executed Section 2 of `center_h2_h3_headings_checklist.md`: Verified `app/services/[slug]/page.tsx`, `app/services/[slug]/[subSlug]/page.tsx`, and `lib/markdown.ts` HTML rendering for centered `h2` and `h3` heading compatibility.
 - **2026-09-15**: Executed Section 1 of `supabase_keyword_regex_fix_checklist.md`: Refactored `applyInternalLinks` in `lib/seo-links.ts` to replace rigid `\b` word boundaries with Unicode and hyphen-aware regex boundaries (`(?<![a-zA-Z0-9\u00C0-\u024F-])` ... `(?![a-zA-Z0-9\u00C0-\u024F-])`), HTML attribute tag inspection, and flexible `\\s+` whitespace matching for double spaces/newlines in article text.
 - **2026-09-22**: Executed and completed canonical URLs standardization across `app/layout.tsx`, `app/services/page.tsx`, `app/services/[slug]/page.tsx`, and `app/services/[slug]/[subSlug]/page.tsx` (added `metadataBase: new URL('https://www.smilevip.net')`, added missing `/services` canonical tag, normalized dynamic canonical URLs with `www`, and completed [`canonical_urls_checklist.md`](file:///c:/Users/dell/d2/canonical_urls_checklist.md)).
+- **2026-09-22**: Updated `app/services/page.tsx` canonical URL to relative path `alternates: { canonical: '/services' }` and verified Next.js build compilation (`npm run build` succeeded with code 0, generating all 56 static pages cleanly). Marked all items complete in [`services_canonical_urls_fix_checklist.md`](file:///c:/Users/dell/d2/services_canonical_urls_fix_checklist.md).
 
 ## Open Items
 - Execute Section 2 of `supabase_keyword_regex_fix_checklist.md` (Verification & build test).
 - Complete remaining section (Section 3) of `center_h2_h3_headings_checklist.md` (Verification & build test) when requested.
-- Deploy updated codebase to live server / hosting provider so live site benefits from dynamic URL decoding, `.maybeSingle()` queries, and sub-service links.
+- Deploy updated codebase to live server / hosting provider so live site benefits from dynamic URL decoding, `.maybeSingle()` queries, sub-service links, and standardized `/services` canonical tags.
 - Execute Section 4 of `dynamic_sitemap_checklist.md` (Verification & build test).
 - Execute Section 3 of `remove_postal_code_checklist.md` (Verification & build test).
 - Execute Section 4 of `dynamic_sitemap_checklist.md` (Verification & build test).
