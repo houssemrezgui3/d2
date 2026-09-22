@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/services',
   },
+  openGraph: {
+    title: 'Nos Services Dentaires | Cabinet Dentaire Dr Rezgui Houssem',
+    description: 'Découvrez l\'ensemble de nos soins dentaires haut de gamme à Tunis : implants, dentisterie esthétique, orthodontie, urgences et soins pédiatriques.',
+    url: 'https://www.smilevip.net/services',
+    type: 'website',
+  },
 };
 
 interface ServiceItem {
