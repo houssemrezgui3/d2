@@ -74,6 +74,7 @@
 - **2026-10-28**: Executed Section 1.2 of `homepage_implants_link_checklist.md`: Verified semantic HTML `<section>`, `<Link href="/services/implants-dentaires">` anchor tag with text `"Implants dentaires à Tunis"`, and descriptive sentence without buttons or JS click handlers.
 - **2026-10-28**: Executed Section 2.1 of `homepage_implants_link_checklist.md`: Added `.home-implants-banner`, `.home-implants-banner-content`, `.home-implants-banner-link`, and `.home-implants-banner-desc` styling in `app/globals.css` matching design tokens with responsive breakpoints.
 - **2026-10-28**: Updated anchor text in `components/HomeImplantsBanner.tsx` from "Implants dentaires à Tunis" to "Implants dentaires a Tunis".
+- **2026-10-28**: Updated address line in `components/Footer.tsx` from "23 Av. Iben Kholdoun, Tunis, Tunisie" to "23 Av. Iben Kholdoun, Tunis".
 
 ## Open Items
 - Execute Section 2 of `supabase_keyword_regex_fix_checklist.md` (Verification & build test).
