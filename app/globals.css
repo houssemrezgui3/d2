@@ -1776,3 +1776,56 @@ button {
         font-size: 1.35rem;
     }
 }
+
+/* Home Implants Banner Section */
+.home-implants-banner {
+    padding: 2.25rem 1.5rem;
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid rgba(195, 164, 105, 0.18);
+    text-align: center;
+}
+
+.home-implants-banner-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.home-implants-banner-link {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.25s ease, transform 0.25s ease;
+    margin-bottom: 0.5rem;
+}
+
+.home-implants-banner-link:hover {
+    color: #a8884a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.home-implants-banner-desc {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-dark-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .home-implants-banner {
+        padding: 1.75rem 1rem;
+    }
+
+    .home-implants-banner-link {
+        font-size: 1.2rem;
+    }
+
+    .home-implants-banner-desc {
+        font-size: 0.9rem;
+    }
+}
