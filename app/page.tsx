@@ -4,6 +4,7 @@ import SeoBlock from '@/components/SeoBlock';
 import ReviewsSection from '@/components/ReviewsSection';
 import LocationSection from '@/components/LocationSection';
 import ConsultSection from '@/components/ConsultSection';
+import HomeAgencyCredit from '@/components/HomeAgencyCredit';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <ReviewsSection />
       <ConsultSection />
       <LocationSection />
+      <HomeAgencyCredit />
     </main>
   );
 }

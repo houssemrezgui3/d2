@@ -75,6 +75,10 @@
 - **2026-10-28**: Executed Section 2.1 of `homepage_implants_link_checklist.md`: Added `.home-implants-banner`, `.home-implants-banner-content`, `.home-implants-banner-link`, and `.home-implants-banner-desc` styling in `app/globals.css` matching design tokens with responsive breakpoints.
 - **2026-10-28**: Updated anchor text in `components/HomeImplantsBanner.tsx` from "Implants dentaires à Tunis" to "Implants dentaires a Tunis".
 - **2026-10-28**: Updated address line in `components/Footer.tsx` from "23 Av. Iben Kholdoun, Tunis, Tunisie" to "23 Av. Iben Kholdoun, Tunis".
+- **2026-10-28**: Created `homepage_agency_credit_checklist.md` to plan adding a subtle server-rendered dofollow credit link ("Web design and SEO by Premium-Results") on the homepage between the Google map section and the footer.
+- **2026-10-28**: Executed Section 1 of `homepage_agency_credit_checklist.md`: Created `components/HomeAgencyCredit.tsx` with a server-rendered dofollow link (`rel="noopener"`, no nofollow) pointing to `https://www.premium-results.com/` and mounted it in `app/page.tsx` right beneath `<LocationSection />`.
+- **2026-10-28**: Executed Section 2 of `homepage_agency_credit_checklist.md`: Added `.home-agency-credit`, `.home-agency-credit-text`, and `.home-agency-credit-link` styles with responsive rules in `app/globals.css`.
+- **2026-10-28**: Executed Section 3 of `homepage_agency_credit_checklist.md`: Verified scope integrity (no changes outside intended components), successful `npm run build` compilation (all 56 static pages generated), and marked checklist complete.
 
 ## Open Items
 - Execute Section 2 of `supabase_keyword_regex_fix_checklist.md` (Verification & build test).

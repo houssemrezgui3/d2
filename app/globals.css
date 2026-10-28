@@ -1829,3 +1829,44 @@ button {
         font-size: 0.9rem;
     }
 }
+
+/* ==========================================
+   Homepage Agency Credit & SEO Link
+   ========================================== */
+.home-agency-credit {
+    padding: 1.15rem 1rem;
+    background-color: var(--primary-bg);
+    text-align: center;
+}
+
+.home-agency-credit-text {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    color: var(--text-dark-muted);
+    letter-spacing: 0.02em;
+}
+
+.home-agency-credit-link {
+    color: var(--text-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(195, 164, 105, 0.4);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease, text-decoration-color var(--transition-speed) ease;
+}
+
+.home-agency-credit-link:hover {
+    color: var(--accent-color);
+    text-decoration-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .home-agency-credit {
+        padding: 1rem 0.75rem;
+    }
+
+    .home-agency-credit-text {
+        font-size: 0.78rem;
+    }
+}
