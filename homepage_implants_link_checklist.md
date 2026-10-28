@@ -29,4 +29,4 @@ Add a dedicated, server-rendered section on the homepage directly below the hero
 - [ ] **Section 3.2: Build & Verification**
   - Run `npm run build` to verify compile-time rendering and ensure static generation succeeds without errors.
 - [ ] **Section 3.3: Project Documentation Update**
-  - Update `PROJECT_CONTEXT.md` Work Log and Open Items to document the newly completed change.
+  - Update `PROJECT_CONTEXT.md` Work Log and Open Items to document the newly completed change. 
